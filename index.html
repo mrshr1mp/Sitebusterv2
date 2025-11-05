@@ -63,7 +63,11 @@
     box-shadow:0 0 15px var(--pink);
   }
 
-  /* MAIN */
+  .Icon {
+    width:24px;
+    height:24px;
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255));
+  }
   .container {
     text-align:center;
     position:relative;
@@ -77,6 +81,12 @@
     text-shadow:0 0 10px var(--pink),0 0 30px var(--pink);
     animation: float 3s ease-in-out infinite;
   }
+
+  h3 {
+    color: #ff87e1;
+    text-shadow:0 0 10px #ff87e1,0 0 30px #ff87e1;
+  }
+  
   @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
 
   .buttons {
@@ -129,8 +139,8 @@
 
 <div class="sidebar">
   <div class="sidebar-title">V2</div>
-  <button onclick="window.scrollTo({top:0, behavior:'smooth'})">🏠</button>
-  <button onclick="window.open('https://earth.google.com/web/', '_blank')">🌍</button>
+  <button onclick="window.open('index.html', '_top')"><img class="Icon" src="Hone.png" alt="Home"></button>
+  <button onclick="window.open('sites.html', '_top')"><img class="Icon" src="world-globe-white-icon.png" alt="Sites"></button>
 </div>
 
 <div class="waves"><svg viewBox="0 0 1200 400" preserveAspectRatio="none">
@@ -145,6 +155,8 @@
 
 <div class="container">
   <h1>SiteBuster V2</h1>
+  <h3>Welcome to SitebusterV2! This is the hub for every amazing unblocked site. <br>
+  <strong>Please Keep this page closed or secret so it does not get blocked!</strong></h3>
   <div class="buttons" id="buttonContainer"></div>
 </div>
 
