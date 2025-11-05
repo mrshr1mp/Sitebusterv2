@@ -36,6 +36,15 @@
     padding-top:20px;
     z-index:20;
   }
+
+  .sidebar-title {
+    font-size:1.4rem;
+    color:var(--pink);
+    text-shadow:0 0 10px var(--pink),0 0 30px var(--pink);
+    margin-bottom:30px;
+    font-weight:bold;
+  }
+
   .sidebar button {
     width:50px;
     height:50px;
@@ -63,7 +72,7 @@
   }
 
   h1 {
-    font-size:6rem;
+    font-size:5rem;
     color:var(--pink);
     text-shadow:0 0 10px var(--pink),0 0 30px var(--pink);
     animation: float 3s ease-in-out infinite;
@@ -77,6 +86,7 @@
     justify-content:center;
     flex-wrap:wrap;
   }
+
   .buttons button {
     padding:15px 30px;
     font-size:1.2rem;
@@ -118,11 +128,11 @@
 <body>
 
 <div class="sidebar">
+  <div class="sidebar-title">V2</div>
   <button onclick="window.scrollTo({top:0, behavior:'smooth'})">🏠</button>
   <button onclick="window.open('https://earth.google.com/web/', '_blank')">🌍</button>
 </div>
 
-<div class="background-shadow"></div>
 <div class="waves"><svg viewBox="0 0 1200 400" preserveAspectRatio="none">
   <path class="wave" d="M0 200 C 150 160 300 240 450 200 S 750 160 900 200 S 1200 240 1350 200 V400 H0 Z"></path>
   <path class="wave" d="M0 210 C 150 170 300 250 450 210 S 750 170 900 210 S 1200 250 1350 210 V400 H0 Z"></path>
@@ -134,7 +144,7 @@
 <div class="particles"></div>
 
 <div class="container">
-  <h1>V2</h1>
+  <h1>SiteBuster V2</h1>
   <div class="buttons" id="buttonContainer"></div>
 </div>
 
