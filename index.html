@@ -68,11 +68,16 @@
     height:24px;
     filter: drop-shadow(0 0 5px rgb(255, 255, 255));
   }
+
+  /* MAIN CONTENT */
   .container {
     text-align:center;
     position:relative;
     z-index:10;
-    margin-left:90px;
+    margin-left:90px; /* leaves space for sidebar */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
 
   h1 {
@@ -85,6 +90,7 @@
   h3 {
     color: #ff87e1;
     text-shadow:0 0 10px #ff87e1,0 0 30px #ff87e1;
+    margin-top:20px;
   }
 
   @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-15px);} }
@@ -132,32 +138,46 @@
   .particle { position:absolute; background:var(--pink); border-radius:50%; opacity:0.5; animation: floatParticle linear infinite; }
   @keyframes floatParticle { 0%{ transform: translateY(0) translateX(0);} 100%{ transform: translateY(-800px) translateX(50px);} }
 
-  footer { display:none; }
+  /* FOOTER */
+  footer {
+    position: fixed;
+    bottom: 10px;       /* distance from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: var(--pink);
+    text-shadow: 0 0 10px var(--pink), 0 0 20px var(--pink);
+    z-index: 20;        /* above waves/particles */
+    animation: none;
+  }
+
 </style>
 </head>
 <body>
 
 <div class="sidebar">
   <div class="sidebar-title">V2</div>
-  <button onclick="window.open('index.html', '_top')"><img class="Icon" src="Hone.png" alt="Home"></button>
-  <button onclick="window.open('sites.html', '_top')"><img class="Icon" src="world-globe-white-icon.png" alt="Sites"></button>
+  <button><img class="Icon" src="home-page-white-icon.png" alt="Home"></button>
 </div>
 
-<div class="waves"><svg viewBox="0 0 1200 400" preserveAspectRatio="none">
-  <path class="wave" d="M0 200 C 150 160 300 240 450 200 S 750 160 900 200 S 1200 240 1350 200 V400 H0 Z"></path>
-  <path class="wave" d="M0 210 C 150 170 300 250 450 210 S 750 170 900 210 S 1200 250 1350 210 V400 H0 Z"></path>
-  <path class="wave" d="M0 190 C 150 150 300 230 450 190 S 750 150 900 190 S 1200 230 1350 190 V400 H0 Z"></path>
-  <path class="wave" d="M0 220 C 150 180 300 260 450 220 S 750 180 900 220 S 1200 260 1350 220 V400 H0 Z"></path>
-  <path class="wave" d="M0 180 C 150 140 300 220 450 180 S 750 140 900 180 S 1200 220 1350 180 V400 H0 Z"></path>
-</svg></div>
+<div class="waves">
+  <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+    <path class="wave" d="M0 200 C 150 160 300 240 450 200 S 750 160 900 200 S 1200 240 1350 200 V400 H0 Z"></path>
+    <path class="wave" d="M0 210 C 150 170 300 250 450 210 S 750 170 900 210 S 1200 250 1350 210 V400 H0 Z"></path>
+    <path class="wave" d="M0 190 C 150 150 300 230 450 190 S 750 150 900 190 S 1200 230 1350 190 V400 H0 Z"></path>
+    <path class="wave" d="M0 220 C 150 180 300 260 450 220 S 750 180 900 220 S 1200 260 1350 220 V400 H0 Z"></path>
+    <path class="wave" d="M0 180 C 150 140 300 220 450 180 S 750 140 900 180 S 1200 220 1350 180 V400 H0 Z"></path>
+  </svg>
+</div>
 
 <div class="particles"></div>
 
 <div class="container">
-  <h1>SiteBuster V2</h1>
-  <h3>Welcome to SitebusterV2! This is the hub for every amazing unblocked site. <br>
-  <strong>Please Keep this page closed or secret so it does not get blocked!</strong></h3>
-  <div class="buttons" id="buttonContainer"></div>
+    <h1>SiteBuster V2</h1>
+    <h3>These are all the sites on SiteBuster!<br>
+    <strong>Please Keep this page closed or secret so it does not get blocked!</strong></h3>
+    <div class="buttons" id="buttonContainer"></div>
+    
 </div>
 
 <script>
@@ -172,9 +192,16 @@ for(let i=0;i<50;i++){
 }
 
 const links=[
-  { label:"Some Stuff 🟢", url:"https://study.quiz.courses/" },
-  { label:"Fern 🟢", url:"https://panel.quiz.courses//" },
+  { label:"Some Stuff 🟢", url:"https://trulyawmath.web.app/#home" },
+  { label:"GBA Emulator 🟢", url:"https://math.quiz.courses/GBA-Emulator/index.html" },
+  { label:"Fern 🟢", url:"https://panel.quiz.courses/" },
+  { label:"Space 🟢", url:"https://settings.quiz.courses/" },
   { label:"Daydreamx 🟢", url:"https://dash.quiz.courses/" },
+  { label:"Frogie's Arcade 🟢", url:"https://inquiries.quiz.courses/" },
+  { label:"Boredom 🟢", url:"https://apis.quiz.courses/" },
+  { label:"ShadowV2 🟢", url:"https://dashboard.quiz.courses/" },
+  { label:"Vapor 🟢", url:"https://create.quiz.courses/" },
+  { label:"Now GG 🟢", url:"https://api.quiz.courses/" },
 ];
 
 const container=document.getElementById("buttonContainer");
@@ -193,6 +220,8 @@ links.forEach(link=>{
   container.appendChild(btn);
 });
 </script>
+
+<footer>Site Creators: Jackson C, Nash W</footer>
 
 </body>
 </html>
